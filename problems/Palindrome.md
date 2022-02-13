@@ -1,5 +1,5 @@
 # Integer Palindrome check. 
-## Reverse second half and Compare with first half.
+## Reverse second half and Compare with first half. O(d/2)
 
 <pre>
 public static boolean palindromeInt2(int x) { 
@@ -21,7 +21,7 @@ public static boolean palindromeInt2(int x) {
   </pre>
   
   # Integer Palindrome
-  ## Reverse complete number and compare
+  ## Reverse complete number and compare O(d)
   <pre>
   public static boolean palindromeInt(int x) { 
 		if(x<0) {
