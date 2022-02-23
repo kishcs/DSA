@@ -47,3 +47,28 @@ public ListNode removeElements(ListNode head, int val) {
     
     }
 ```
+
+### Another Simple Solution
+```
+public static ListNode remove(ListNode head, int val) {
+		if(head == null){
+            return null;
+        }
+        while(head != null && head.val == val){
+            head = head.next;
+        }
+        if(head == null){
+            return null;
+        }
+        ListNode temp = head;
+        while(head.next != null){
+            if(head.next.val == val){
+                head.next = head.next.next;
+            }
+            else {
+                head = head.next;
+            }
+        }
+        return temp;
+	}
+```
