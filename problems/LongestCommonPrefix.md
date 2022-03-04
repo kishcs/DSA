@@ -53,3 +53,36 @@ public String longestCommonPrefix(String[] strs) {
         return p;
     }
 ```
+
+### Fast way
+```
+public String longestCommonPrefix(String[] strs) {
+        if(strs.length == 1) {
+            return strs[0]; 
+        }
+        
+        int len = strs.length;
+        int minLength = strs[0].length();
+        String minStr = strs[0];
+        for(int i = 0; i < len; i++) {
+            if(strs[i].length() == 0) {
+                return "";
+            }
+            if(minLength > strs[i].length()) {
+                minLength = strs[i].length();
+                minStr = strs[i];
+            }
+        }
+
+        String prefix = "";
+        for(int j=0; j < minLength; j++) {
+            for(int i = 0; i < len; i++) {
+                if(minStr.charAt(j) != strs[i].charAt(j)) {
+                    return prefix;
+                }
+            }
+            prefix += minStr.charAt(j);
+        }
+        return prefix;
+    }
+```
