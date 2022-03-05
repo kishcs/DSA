@@ -58,3 +58,20 @@ public int removeElement(int[] nums, int val) {
         return n - count;
     }
 ```
+
+Another way
+```
+public int removeElement(int[] nums, int val) {
+       int ind = 0;
+        for(int num: nums){
+		//here i am comparing all the values in array which is not equal to target, and at mean time I am counting the index also.
+            if(num != val){
+                nums[ind++] = num;
+				//The upper single line code is the replacement of the below 2 lines code
+				*//num[ind] = num;
+				//ind++;*
+            }
+        }
+        return ind;
+    }
+```
