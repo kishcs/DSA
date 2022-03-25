@@ -17,3 +17,33 @@ def binaryGap(num):
             count += 1
     print("max binary gap:", maxGap)
 ```
+
+
+# Full Program
+
+```
+def solution(number):
+    b = bin(number)
+    b = b[2:]
+    print(b)
+    max_gap = 0
+    curr_gap = 0
+    for i in str(b):
+        if i == str(1):
+            if max_gap < curr_gap:
+                max_gap = curr_gap
+            curr_gap = 0
+        else:
+            curr_gap += 1
+    return max_gap
+
+
+def main():
+    gap = solution(800001)
+    print(gap)
+
+
+if __name__ == "__main__":
+    main()
+
+```
