@@ -14,11 +14,11 @@ A and B are integers within the range [0..2,000,000,000];
 K is an integer within the range [1..2,000,000,000];
 A ≤ B.
 
-### Optimized Solution
+### Optimized Solution, 100% Pass, O(1)
 ```
 def solution(A, B, K):
     if K > B:
-        return 0
+        return 0 if A > 0 else 1
      
     count = 0
     first = -1
@@ -27,20 +27,9 @@ def solution(A, B, K):
     else:
         rem = A % K
         first = A + K - rem
-    # print('FIRST', first)
-    # for i in range(A, B+1):
-    #     if i % K == 0:
-    #         first = i
-    #         break
+    
     last = K * (B // K)
-    #print(first, 'and', last)
-    #print(first // K, 'and', last // K)
-
-    # if first == -1:
-    #     return 0
     count = (last//K) - (first//K) + 1
-    #print('==>', checkthis)
-    #count = len([i for i in range(first, last+1, K)])
     return count
 ```
 
