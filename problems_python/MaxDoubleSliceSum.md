@@ -73,3 +73,5 @@ def solution(A):
         max_sum = max(max_sum, left[i-1] + right[i+1])
     return max_sum
 ```
+
+https://rafal.io/posts/codility-max-double-slice-sum.html
